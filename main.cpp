@@ -3,7 +3,7 @@
 #include <iostream>
 #include <memory>
 
-BOOL CreateProcessWithParant(DWORD parentId, PWSTR commandline)
+BOOL CreateProcessWithParent(DWORD parentId, PWSTR commandline)
 {
 	auto hProcess = ::OpenProcess(PROCESS_CREATE_PROCESS, FALSE, parentId);
 	if (!hProcess)
@@ -38,6 +38,6 @@ BOOL CreateProcessWithParant(DWORD parentId, PWSTR commandline)
 int main(int argc, const char* argv[])
 {
 	WCHAR name[] = L"mspaint";
-	CreateProcessWithParant(22624, name);
+	CreateProcessWithParent(22624, name);
 	return 0;
 }
